@@ -1,0 +1,13 @@
+*.vvp
+*.vcd
+*.fst
+*.exe
+*.o
+*.obj
+*.log
+*.tmp
+sim/
+build/
+.vscode/
+.idea/
+__pycache__/
