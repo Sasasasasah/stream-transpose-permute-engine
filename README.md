@@ -4,6 +4,10 @@ A cycle-aware RTL/C++ implementation of a stream-oriented 32x32 transpose
 engine built from pipelined 8x8 transpose units, result buffers, and
 deterministic tile permutation.
 
+This repository is a deterministic RTL/C++ architecture prototype for studying
+and verifying stream transpose/permutation behavior; it is not production
+accelerator IP or a physical-design implementation.
+
 ## Features
 
 - Four-stage transpose command pipeline
@@ -53,7 +57,8 @@ w6:             B33
 
 The next matrix may start every four cycles. The verification environment checks
 both complete matrix reconstruction and read-old/write-new buffer reuse during
-the overlap cycle.
+the overlap cycle. The 32x32 shape and II=4 timing describe the current
+prototype configuration and schedule.
 
 ## Project Structure
 
@@ -64,6 +69,11 @@ tb/        RTL testbenches
 scripts/   Windows batch regression entry points
 docs/      Architecture and interface notes
 ```
+
+## Documentation
+
+- [Architecture](docs/architecture.md)
+- [Interface](docs/interface.md)
 
 ## Quick Start
 
